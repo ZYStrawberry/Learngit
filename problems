@@ -1,0 +1,38 @@
+问题一：在实验过程中一直被要求输入账户名字和密码，感觉像是死循环？
+解决：要学会听它的话，它让你输入时，你就乖乖输入，但是一定要注意的是，你要确保你的输入是正确的。确保输入是正确的，你或许就可以跳到下一步了。如果还是错的，就要好好的看它的提示信息，然后按照它说的做。
+
+问题二：在remote的时候出现如下情况：
+$ git remote add origin git@github.com:ZYStrawberry/Learngit.git
+错误提示：fatal: remote origin already exists.
+解决办法：$ git remote rm origin
+然后再执行：$ git remote add origin git@github.com:defnngj/hello-world.git 就不会报错误了
+
+问题三：在执行 $ git push origin master
+错误提示：error:failed to push som refs to.......
+解决办法：
+$ git pull origin master // 先把远程服务器github上面的文件拉下来，再push 上去。
+
+问题四：git add的时候出现的问题提示如下：
+$ git add count.txt
+warning: LF will be replaced by CRLF in count.txt.
+The file will have its original line endings in your working directory.
+解决方法：
+CRLF -- Carriage-Return Line-Feed 回车换行
+就是回车(CR, ASCII 13, \r) 换行(LF, ASCII 10, \n)。这两个ACSII字符不会在屏幕有任何输出，但在Windows中广泛使用来标识一行的结束。而在Linux/UNIX系统中只有换行符。也就是说在windows中的换行符为 CRLF， 而在Linux下的换行符为LF.
+使用git来生成一个rails工程后，文件中的换行符为LF， 当执行git add .时，系统提示：LF 将被转换成 CRLF 
+只要删除刚刚生成的.git文件
+$ rm -rf .git
+$ git config --gobal core.autocrlf false
+然后再次执行add就好了。
+问题五：
+$ git remote add origin master https://github.com/ZYStrawberry/Learngit.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
