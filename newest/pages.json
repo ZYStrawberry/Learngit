@@ -1,0 +1,73 @@
+{
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/index/index",
+            "style" : {
+                "navigationBarTitleText" : "新闻列表"
+            }
+        },
+        {
+            "path" : "pages/info/info",
+            "style" : {
+                "navigationBarTitleText" : "新闻详情"
+            }
+        },
+        {
+            "path" : "pages/list/list",
+            "style" : {
+				"navigationBarTitleText" : "电影列表"
+			}
+        }
+//         {
+//             "path" : "pages/SeatChoose/SeatChoose",
+//             "style" : {
+// 				"navigationBarTitleText" : "选位置"
+// 			}
+//         }
+    ],
+    "globalStyle" : {
+        "navigationBarTextStyle" : "black",
+        "navigationBarTitleText" : "uni-app",
+        "navigationBarBackgroundColor" : "#F8F8F8",
+        "backgroundColor" : "#F8F8F8"
+    },
+	"tabBar": {
+		"color": "#444444",
+		"selectedColor": "#FF80AB",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/new/new",
+			"iconPath": "static/index-0.png",
+			"selectedIconPath": "static/index-1.png",
+			"text": "最新"
+		}, {
+			"pagePath": "pages/hot/hot",
+			"iconPath": "static/hot-0.png",
+			"selectedIconPath": "static/hot-1.png",
+			"text": "推荐"
+		}, {
+			"pagePath": "pages/tag/tag",
+			"iconPath": "static/tag-0.png",
+			"selectedIconPath": "static/tag-1.png",
+			"text": "分类"
+		}, {
+			"pagePath": "pages/center/center",
+			"iconPath": "static/center-0.png",
+			"selectedIconPath": "static/center-1.png",
+			"text": "我的"
+		}]
+	}
+//     "condition" : {
+//         //模式配置，仅开发期间生效
+//         "current" : 0, //当前激活的模式（list 的索引项）
+//         "list" : [
+//             {
+//                 "name" : "test", //模式名称
+//                 "path" : "pages/info/info", //启动页面，必选
+//                 "query" : "newId=5163769" //启动参数，在页面的onLoad函数里面得到。
+//             }
+//         ]
+//     }
+}
